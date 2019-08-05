@@ -1,0 +1,47 @@
+packages:
+  root:
+    version: [6.18.00]
+    variants: cxxstd=17 +xml+python+x+opengl+root7+ssl+tbb+threads+gdml
+
+  geant4:
+    variants: +x11+opengl+threads+data+python cxxstd=17
+
+  libxml2:
+    variants: +python
+
+  dd4hep:
+    variants: +xercesc+geant4
+
+  boost:
+    variants: +python +numpy
+
+  gaudi:
+    variants: +optional+tests
+
+  range-v3:
+    version: [develop]
+    variants: cxxstd=17
+
+  xerces-c:
+    variants: cxxstd=17
+
+  bzip2:
+    variants: +shared
+
+  python:
+    version: [2.7.16]
+    variants: +bz2+ctypes+dbm+lzma+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl+zlib
+
+  clhep:
+    version: [2.4.0]
+    variants: cxxstd=17
+
+  apple-libunwind:
+    paths:
+      apple-libunwind@35.3%gcc@9.1.0 arch=linux-centos7-x86_64: /usr
+    buildable: False
+
+
+  all:
+    compiler: [gcc@9.1.0, gcc@4.8.5]
+    # settings that apply to all packages.
